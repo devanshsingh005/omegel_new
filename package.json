@@ -18,7 +18,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "omegle-clone": "file:",
     "redis": "^4.6.11",
     "simple-peer": "^9.11.1",
     "socket.io": "^4.7.2"
