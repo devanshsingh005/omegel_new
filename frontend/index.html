@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omegle Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-screen" class="screen active">
+            <h1>Welcome to Omegle Clone</h1>
+            <p>Connect with random people around the world!</p>
+            <button id="start-chat" class="btn">Start Chatting</button>
+        </div>
+
+        <div id="loading-screen" class="screen">
+            <div class="loader"></div>
+            <p id="status-message">Looking for someone to chat with...</p>
+        </div>
+
+        <div id="chat-screen" class="screen">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video id="localVideo" autoplay muted></video>
+                    <div class="video-overlay">You</div>
+                </div>
+                <div class="video-wrapper">
+                    <video id="remoteVideo" autoplay></video>
+                    <div class="video-overlay">Stranger</div>
+                </div>
+            </div>
+            
+            <div class="chat-container">
+                <div id="chat-messages"></div>
+                <div class="chat-input">
+                    <textarea id="messageInput" placeholder="Type a message..." rows="1"></textarea>
+                    <button id="sendButton" class="btn">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="toggle-video" class="control-btn">
+                <span class="icon">📹</span>
+                <span class="label">Video</span>
+            </button>
+            <button id="toggle-audio" class="control-btn">
+                <span class="icon">🎤</span>
+                <span class="label">Audio</span>
+            </button>
+            <button id="next-chat" class="control-btn">
+                <span class="icon">➡️</span>
+                <span class="label">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.1/simplepeer.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
